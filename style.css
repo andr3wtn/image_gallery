@@ -37,15 +37,16 @@ img {
     object-fit: cover;
 }
 
-.overlay {
+.hover {
   position: absolute;
   inset: 0;
   background-color: rgba(255, 255, 255, 0.18);
   opacity: 0;
   transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
-.image-container:hover .overlay {
+.image-container:hover .hover {
   opacity: 1;
 }
 
@@ -57,10 +58,44 @@ a:visited {
     color: black;
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+
+.overlay img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.clickable {
+    font-size: 8rem;
+    color: white;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 4rem;
+    font-size: 5rem;
+}
+
+
 /* mobile size */
 @media (max-width: 768px) { 
     header {
         display: block;
+        padding: 1rem 2rem
     }
 
     body {
