@@ -38,3 +38,9 @@ function store_large_img(index) {
     document.querySelector(".overlay img").src = images[current_index].src;
 }
 
+
+document.addEventListener("keydown", (e) => {
+    if (overlay.style.display == "none") return;
+    if (e.key == "ArrowLeft") prev();
+    if (e.key == "ArrowRight") next();
+});
